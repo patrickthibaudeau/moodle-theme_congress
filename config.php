@@ -90,7 +90,7 @@ $THEME->layouts = [
     ),
     // The site home page.
     'frontpage' => array(
-        'file' => 'default.php',
+        'file' => 'drawers.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),

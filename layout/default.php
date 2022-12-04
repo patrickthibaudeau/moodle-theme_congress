@@ -62,7 +62,8 @@ $templatecontext = [
     'secondarymoremenu' => $secondarynavigation ?: false,
     'home_page' => $home_page,
     'user_pic' => $user_pic,
-    'fullname' => fullname($USER)
+    'fullname' => fullname($USER),
+    'is_siteadmin' => is_siteadmin($USER)
 ];
 
 echo $OUTPUT->render_from_template('theme_congress/default', $templatecontext);
