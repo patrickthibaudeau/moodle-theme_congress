@@ -16,7 +16,7 @@ $(document).ready(function(){
             case wwwroot + '/admin/category.php?category=h5p':
             case wwwroot + '/admin/category.php?category=license':
             case wwwroot + '/admin/category.php?category=messaging':
-            case wwwroot + '/admin/category.php?category=payments':
+            case wwwroot + '/admin/category.php?category=payment':
             case wwwroot + '/admin/category.php?category=moodlenet':
             case wwwroot + '/admin/category.php?category=modsettings':
             case wwwroot + '/admin/category.php?category=availabilitysettings':
@@ -57,10 +57,18 @@ $(document).ready(function(){
             case wwwroot + '/admin/settings.php?section=templates':
             case wwwroot + '/admin/settings.php?section=themesettingboost':
             case wwwroot + '/admin/settings.php?section=themesettingclassic':
+            case wwwroot + '/admin/settings.php?section=moodleservices':
+            case wwwroot + '/admin/settings.php?section=userfeedback':
+            case wwwroot + '/admin/settings.php?section=optionalsubsystems':
             case wwwroot + '/cohort/index.php':
             case wwwroot + '/admin/tool/cohortroles/index.php':
             case wwwroot + '/user/profile/index.php':
+            case wwwroot + '/admin/index.php':
+            case wwwroot + '/admin/registration/index.php':
+            case wwwroot + '/admin/tool/admin_presets/index.php':
                 element = $(this).parent();
+                element.prev().filter("hr").remove();
+                element.remove();
                 element.remove();
         }
 
