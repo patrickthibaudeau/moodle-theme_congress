@@ -35,7 +35,10 @@ user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('ui');
 
-$user_pic = $OUTPUT->user_picture($USER);
+$user_pic = '';
+if (isloggedin()) {
+    $user_pic = $OUTPUT->user_picture($USER);
+}
 
 $config = get_config('theme_congress');
 
@@ -67,4 +70,4 @@ $templatecontext = [
     'isloggedin' => isloggedin()
 ];
 
-echo $OUTPUT->render_from_template('theme_congress/default', $templatecontext);
+echo $OUTPUT->render_from_template('theme_congress/frontpage', $templatecontext);

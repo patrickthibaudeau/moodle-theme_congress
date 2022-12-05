@@ -16,21 +16,29 @@
     <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-            <div class="btn-group">
-                <button type="button" class="btn btn-link user-panel d-flex" data-toggle="dropdown" aria-expanded="false">
-                    <div class="image">
-                        {{{user_pic}}}
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">{{fullname}}</a>
-                    </div>
-                </button>
-                <div class="dropdown-menu" role="menu" style="">
-                    <a class="dropdown-item" href="{{config.wwwroot}}/login/logout.php?sesskey={{config.sesskey}}">
+            {{#isloggedin}}
+                <div class="btn-group">
+                    <button type="button" class="btn btn-link user-panel d-flex" data-toggle="dropdown"
+                            aria-expanded="false">
+                        <div class="image">
+                            {{{user_pic}}}
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block">{{fullname}}</a>
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" role="menu" style="">
+                        <a class="dropdown-item" href="{{config.wwwroot}}/login/logout.php?sesskey={{config.sesskey}}">
                         {{#str}}logout, core{{/str}}
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            {{/isloggedin}}
+            {{^isloggedin}}
+                <a href="{{config.wwwroot}}/login/index.php" class="btn btn-link user-panel d-flex">
+                    {{#str}}login, core{{/str}}
+                </a>
+            {{/isloggedin}}
         </li>
     </ul>
 </nav>
