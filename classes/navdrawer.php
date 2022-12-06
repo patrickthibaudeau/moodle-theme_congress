@@ -9,18 +9,23 @@ class navdrawer
 
 
     /**
-     * Add menu object
      * @param $title string
+     * @param $submenu array
      * @param $url string
-     * @param $icon string Fontawesome 5 icon
-     * @return \stdClass
+     * @param $icon string
+     * @return array
      */
-    public static function add_item($title , $url = '#', $icon = 'far fa-circle') {
+    public static function add_item($title , $submenu = null, $url = '#', $icon = 'far fa-circle') {
         $item = [
             'title' => $title,
             'url' => $url,
             'icon' => $icon
         ];
+
+        if ($submenu) {
+            $item['has_submenu'] = count($submenu);
+            $item['submenu'] = $submenu;
+        }
 
         return $item;
     }
