@@ -24,6 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+use theme_congress\navdrawer;
+
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
 
@@ -56,6 +58,10 @@ if ($PAGE->has_secondary_navigation()) {
     }
 }
 
+
+
+
+
 $templatecontext = [
     'sitename' => format_string($SITE->fullname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -64,7 +70,9 @@ $templatecontext = [
     'user_pic' => $user_pic,
     'fullname' => fullname($USER),
     'is_siteadmin' => is_siteadmin($USER),
-    'isloggedin' => isloggedin()
+    'isloggedin' => isloggedin(),
+    'navdrawer_items' => navdrawer::render_navdrawer_items(),
+
 ];
 
 echo $OUTPUT->render_from_template('theme_congress/default', $templatecontext);

@@ -92,6 +92,16 @@
                             </li>
                         </ul>
                     </li>
+                    {{#navdrawer_items}}
+                        <li class="nav-item">
+                            <a href="{{url}}" class="nav-link">
+                                <i class="nav-icon {{icon}}"></i>
+                                <p>
+                                    {{title}}
+                                </p>
+                            </a>
+                        </li>
+                    {{/navdrawer_items}}
                     {{#is_siteadmin}}
                         <li class="nav-item">
                             <a href="{{config.wwwroot}}/admin/search.php" class="nav-link">
