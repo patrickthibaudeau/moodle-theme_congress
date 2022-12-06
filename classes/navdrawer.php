@@ -9,32 +9,34 @@ class navdrawer
 
 
     /**
+     * Add a navdrawer menu item
      * @param $title string
      * @param $submenu array
      * @param $url string
-     * @param $icon string
-     * @return array
+     * @param $icon string based on free fontawesome 5 https://fontawesome.com/v5/search?q=inventory&o=r&m=free
+     * @return \stdClass
      */
-    public static function add_item($title , $submenu = null, $url = '#', $icon = 'far fa-circle') {
-        $item = [
-            'title' => $title,
-            'url' => $url,
-            'icon' => $icon
-        ];
+    public static function add($title , $submenu = null, $url = '#', $icon = 'far fa-circle') {
+
+        $item = new \stdClass();
+        $item->title = $title;
+        $item->url = $url;
+        $item->icon = $icon;
 
         if ($submenu) {
-            $item['has_submenu'] = count($submenu);
-            $item['submenu'] = $submenu;
+            $item->has_submenu = count($submenu);
+            $item->submenu = $submenu;
         }
 
         return $item;
     }
 
     /**
-     * Iterate through all folders within the local folder and get all navdrawer arrays
+     * Render navdrawer menu items by iterating through all folders (plugins)
+     * within the local folder and merge all arrays
      * @return array|void
      */
-    public static function render_navdrawer_items() {
+    public static function render() {
         global $CFG;
 
         $path = $CFG->dirroot . '/local/';

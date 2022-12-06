@@ -71,7 +71,7 @@ $templatecontext = [
     'fullname' => fullname($USER),
     'is_siteadmin' => is_siteadmin($USER),
     'isloggedin' => isloggedin(),
-    'navdrawer_items' => navdrawer::render_navdrawer_items(),
+    'navdrawer_items' => navdrawer::render(),
 
 ];
 
