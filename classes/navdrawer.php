@@ -16,12 +16,13 @@ class navdrawer
      * @param $icon string based on free fontawesome 5 https://fontawesome.com/v5/search?q=inventory&o=r&m=free
      * @return \stdClass
      */
-    public static function add($title , $submenu = null, $url = '#', $icon = 'far fa-circle') {
+    public static function add($title , $submenu = null, $url = '#', $icon = 'far fa-circle' , $divider = false) {
 
         $item = new \stdClass();
         $item->title = $title;
         $item->url = $url;
         $item->icon = $icon;
+        $item->divider = $divider;
 
         if ($submenu) {
             $item->has_submenu = count($submenu);

@@ -25,7 +25,7 @@
                     </li>
 
                     {{#navdrawer_items}}
-                        <li class="nav-item">
+                        <li class="nav-item" {{#divider}}style="border-bottom: 1px solid #4f5962;"{{/divider}}>
                             <a href="{{url}}" class="nav-link">
                                 <i class="nav-icon {{icon}}"></i>
                                 <p>
@@ -39,7 +39,7 @@
                             {{#has_submenu}}
                                 <ul class="nav nav-treeview">
                                     {{#submenu}}
-                                        <li class="nav-item">
+                                        <li class="nav-item" {{#divider}}style="border-bottom: 1px solid #4f5962;"{{/divider}}>
                                             <a href="{{url}}" class="nav-link">
                                                 <i class="nav-icon {{icon}}"></i>
                                                 <p>
