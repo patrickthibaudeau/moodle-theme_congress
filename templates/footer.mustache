@@ -75,5 +75,15 @@
 <script src="{{config.wwwroot}}/theme/congress/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{config.wwwroot}}/theme/congress/js/adminlte.min.js"></script>
+<!-- DataTables -->
+<script type="text/javascript" src="{{config.wwwroot}}/theme/congress/js/DataTables/datatables.min.js"></script>
+<!-- Select2 -->
+<script src="{{config.wwwroot}}/theme/congress/js/select2/select2.min.js"></script>
+<link rel="stylesheet" href="{{config.wwwroot}}/theme/congress/js/select2/css/select2-bootstrap4.min.css">
 
 {{{ output.standard_end_of_body_html }}}
+{{#js}}
+    require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+    });
+{{/js}}
