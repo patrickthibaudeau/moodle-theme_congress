@@ -18,7 +18,7 @@ function theme_congress_redirect_to_home()
     if ($config->redirect_url) {
         $current_url = $_SERVER['REQUEST_URI'];
 // If user clicked home page link
-        if ($current_url == '/?redirect=0') {
+        if ($current_url == '/?redirect=0' || $current_url == '/my/') {
             redirect($CFG->wwwroot . $config->redirect_url);
         }
     }

@@ -96,7 +96,7 @@ if (!is_siteadmin()) {
 $config = get_config('theme_congress');
 
 // Redirect user
-theme_congress_load_all_redirects();;
+theme_congress_load_all_redirects();
 
 $templatecontext = [
     'sitename' => format_string($SITE->fullname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
